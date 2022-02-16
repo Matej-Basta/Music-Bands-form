@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="store.php" method="post">
         <input type="text" name="name" placeholder="Name" value="<?= $band->name ?>">
         <input type="number" name="year" placeholder="Year" value="<?= $band->year ?>">
         <input type="text" name="singer" placeholder="Singer" value="<?= $band->singer ?>">
