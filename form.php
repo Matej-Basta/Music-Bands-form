@@ -8,10 +8,10 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="name" placeholder="Name" value="">
-        <input type="number" name="year" placeholder="Year" value="">
-        <input type="text" name="singer" placeholder="Singer" value="">
-        <input type="text" name="guitar" placeholder="Guitar" value="">
+        <input type="text" name="name" placeholder="Name" value="<?= $band->name ?>">
+        <input type="number" name="year" placeholder="Year" value="<?= $band->year ?>">
+        <input type="text" name="singer" placeholder="Singer" value="<?= $band->singer ?>">
+        <input type="text" name="guitar" placeholder="Guitar" value="<?= $band->guitar ?>">
         <button>Save</button>
     </form>
 </body>
