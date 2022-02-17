@@ -3,20 +3,16 @@
 require_once "DBBlackbox.php";
 require_once "Band.php";
 
-//prepare empty data
+//prepare existing data
+$id = $_GET["id"];
 
-$band = new Band;
+$band = find($id, "Band");
 
-//fill the information
-
+//fill it from request
 $band->hydrateFromRequest();
 
 //save the data
-
-$id = insert($band);
-
-$band->id = $id;
+update($band->id, $band);
 
 //redirect
-
 header("Location: data.php");

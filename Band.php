@@ -2,6 +2,7 @@
 
 class Band
 {
+    public $id = null;
     public $name = null;
     public $year = null;
     public $singer = null;

@@ -30,6 +30,19 @@ $music_bands = select(null, null, "Band");
         
         
             </li>
+
+            <form action="delete.php?id=<?= $band->id ?>" method="POST">
+                <button onclick="if (!confirm('Do you really want to delete this?')) return false;">Delete</button>
+            </form>
+
+             <a href="edit.php?id=<?= $band->id ?>">
+                        Edit
+            </a>
+
+            <!-- <form action="edit.php?id=<?= $band->id ?>" method="GET">
+                <button>Edit</button>
+            </form> -->
+
             <br>
             <br>
 
