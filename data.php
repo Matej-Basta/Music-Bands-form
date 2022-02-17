@@ -41,9 +41,9 @@ $music_bands = select(null, null, "Band");
                         Edit
             </a>
 
-            <!-- <form action="edit.php?id=<?= $band->id ?>" method="GET">
+            <form action="edit.php?id=<?= $band->id ?>" method="post">
                 <button>Edit</button>
-            </form> -->
+            </form>
 
             <br>
             <br>
