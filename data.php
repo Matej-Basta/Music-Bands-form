@@ -17,6 +17,8 @@ $music_bands = select(null, null, "Band");
 </head>
 <body>
 
+    <a href="create.php">Create new entry</a>
+
     <ul>
         <?php foreach($music_bands as $band) : ?>
 
