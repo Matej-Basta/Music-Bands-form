@@ -3,8 +3,12 @@
 require_once "DB_functions.php";
 require_once "DB.php";
 require_once "Band.php";
+require_once "Session.php";
 
 $success = connect("localhost", "music", "root", "");
+
+$session = Session::instance();
+// var_dump($session);
 
 $query = "
     SELECT *
@@ -25,6 +29,8 @@ $music_bands = select($query, [], "Band");
     <title>Document</title>
 </head>
 <body>
+
+    <?php include 'messages.php'; ?>
 
     <a href="create.php">Create new entry</a>
 
@@ -49,13 +55,12 @@ $music_bands = select($query, [], "Band");
              <a href="edit.php?id=<?= $band->id ?>">
                         Edit
             </a>
-            
+
             <br>
             <br>
 
         <?php endforeach; ?>
     </ul>
-    
 </body>
 </html>
 

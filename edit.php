@@ -3,12 +3,14 @@
 require_once "Band.php";
 require_once "DB_functions.php";
 require_once "DB.php";
+require_once "Session.php";
 
 $success = connect("localhost", "music", "root", "");
 
 //prepare existing data
 
-var_dump($_GET);
+$session = Session::instance();
+// var_dump($session);
 
 $id = $_GET["id"];
 
