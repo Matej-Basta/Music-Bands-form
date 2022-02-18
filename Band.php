@@ -1,5 +1,8 @@
 <?php
 
+require_once "DB_functions.php";
+require_once "DB.php";
+
 class Band
 {
     public $id = null;
@@ -14,5 +17,44 @@ class Band
         $this->year = $_POST["year"] ?? $this->year;
         $this->singer = $_POST["singer"] ?? $this->singer;
         $this->guitar = $_POST["guitar"] ?? $this->guitar;
+    }
+
+    public function insert()
+    {
+        $query = "
+            INSERT
+            INTO `bands`
+            (`name`, `year`, `singer`, `guitar`)
+            VALUES
+            (?, ?, ?, ?)
+        ";
+
+        insert($query, ["{$this->name}", "{$this->year}", "{$this->singer}", "{$this->guitar}"]);
+
+        $query2 = "
+            SELECT `id`
+            FROM `bands`
+            WHERE `name`= ?
+            ORDER BY `id` DESC
+            LIMIT 1
+        ";
+
+        $id = select($query2, ["{$this->name}"]);
+
+        $this->id = $id[0]->id;
+    }
+
+    public function update()
+    {
+        $query = "
+            UPDATE `bands`
+            SET `name` = ?,
+            `year` = ?,
+            `singer` = ?,
+            `guitar`= ?
+            WHERE `id` = ?
+        ";
+
+        update($query, ["{$this->name}", "{$this->year}", "{$this->singer}", "{$this->guitar}", "{$this->id}"]);
     }
 }

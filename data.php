@@ -1,9 +1,18 @@
 <?php
 
-require_once "DBBlackbox.php";
+require_once "DB_functions.php";
+require_once "DB.php";
 require_once "Band.php";
 
-$music_bands = select(null, null, "Band");
+$success = connect("localhost", "music", "root", "");
+
+$query = "
+    SELECT *
+    FROM `bands`
+    WHERE 1
+";
+
+$music_bands = select($query, [], "Band");
 
 ?>
 
@@ -40,11 +49,7 @@ $music_bands = select(null, null, "Band");
              <a href="edit.php?id=<?= $band->id ?>">
                         Edit
             </a>
-
-            <form action="edit.php?id=<?= $band->id ?>" method="post">
-                <button>Edit</button>
-            </form>
-
+            
             <br>
             <br>
 
