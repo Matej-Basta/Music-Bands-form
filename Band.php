@@ -57,4 +57,15 @@ class Band
 
         update($query, ["{$this->name}", "{$this->year}", "{$this->singer}", "{$this->guitar}", "{$this->id}"]);
     }
+
+    public function delete()
+    {
+        $query = "
+            DELETE
+            FROM `bands`
+            WHERE `id` = ?
+        ";
+
+        delete($query, ["{$this->id}"]);
+    }
 }
