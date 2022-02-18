@@ -5,6 +5,19 @@ require_once "DB.php";
 
 class Band
 {
+    public static function findOneBand($key)
+    {
+        $success = connect("localhost", "music", "root", "");
+
+        $query = "
+            SELECT *
+            FROM `bands`
+            WHERE `bands`.`id` = ?
+        ";
+
+        return select_one($query, ["{$key}"], "Band");
+    }
+    
     public $id = null;
     public $name = null;
     public $year = null;

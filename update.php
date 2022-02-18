@@ -9,13 +9,7 @@ $success = connect("localhost", "music", "root", "");
 //prepare existing data
 $id = $_GET["id"];
 
-$query = "
-    SELECT *
-    FROM `bands`
-    WHERE `bands`.`id` = ?
-";
-
-$band = select_one($query, ["{$id}"], "Band");
+$band = Band::findOneBand($id);
 
 
 //fill it from request
