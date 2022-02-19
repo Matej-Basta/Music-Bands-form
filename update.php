@@ -2,8 +2,8 @@
 
 require_once "DB_functions.php";
 require_once "DB.php";
-require_once "Band.php";
-require_once "Session.php";
+require_once "./classes/Band.php";
+require_once "./classes/Session.php";
 
 $success = connect("localhost", "music", "root", "");
 
@@ -51,4 +51,4 @@ $band->update();
 Session::instance()->flash('success_message', 'Song successfully updated.');
 
 //redirect
-header("Location: data.php");
+header("Location: index.php");

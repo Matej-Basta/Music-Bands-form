@@ -2,8 +2,8 @@
 
 require_once "DB_functions.php";
 require_once "DB.php";
-require_once "Band.php";
-require_once "Session.php";
+require_once "./classes/Band.php";
+require_once "./classes/Session.php";
 
 //connect do database
 
@@ -56,4 +56,4 @@ Session::instance()->flash('success_message', 'Band successfully inserted.');
 
 //redirect
 
-header("Location: data.php");
+header("Location: index.php");
