@@ -1,7 +1,7 @@
 <?php
 
-require_once "../DB/DB_functions.php";
-require_once "../DB/DB.php";
+require_once "./database/DB_functions.php";
+require_once "./database/DB.php";
 
 class Band
 {
