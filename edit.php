@@ -1,8 +1,8 @@
 <?php
 
 require_once "./classes/Band.php";
-require_once "DB_functions.php";
-require_once "DB.php";
+require_once "./DB/DB_functions.php";
+require_once "./DB/DB.php";
 require_once "./classes/Session.php";
 
 $success = connect("localhost", "music", "root", "");
